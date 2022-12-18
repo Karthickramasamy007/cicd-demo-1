@@ -69,3 +69,15 @@ Git --> Jenkins --> docker-hub --> kubernetes-dev --> kubetnetes-sit.
     * Now put path to 'jenkisfile' that containes pipline script. Here we have to give pipeline/jenkinsfile
     * Now mention the branch as */main. Here our project in 'main' branch. Whenever, we merge to the main brach the pipeline will get triggered.
     * Now click save and start building the pipeline.
+
+
+    # CONFIGURE GIT REPO AND PUSH CODE:
+    * Get into the folder that you want to push into git. Here 'cicd-demo-1'
+    * Assume you have configured git allready
+    * run : git init
+    * git add .
+    * git commit -m "inital commit"
+    * git remote add origin https://github.com/Karthickramasamy007
+    * git branch -M master
+
+
