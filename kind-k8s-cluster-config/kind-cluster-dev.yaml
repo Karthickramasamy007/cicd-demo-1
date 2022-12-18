@@ -1,0 +1,12 @@
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+- role: control-plane
+  extraMounts:
+        - hostPath: C:\Users\karth\Documents\allProjects\volume #This is where this particular cluster's data are stored
+          containerPath: /mnt/data
+# - role: worker
+# - role: worker
+networking:
+  apiServerAddress: "192.168.0.13"
+  apiServerPort: 58350
