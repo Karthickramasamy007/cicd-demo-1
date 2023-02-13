@@ -1,20 +1,7 @@
 pipeline {
   
   
-  stage("Git Checkout"){           
-      steps{                
-	   
-	      //git credentialsId: 'github', url: 'https://github.com/Karthickramasamy007/demo-cicd-project.git'
-	      //git branch: 'main', credentialsId: '6796b853-a79b-4dec-a51f-54f163c958ba', url: 'https://github.com/Karthickramasamy007/demo-cicd-project.git'
-	      git branch: 'karthick-feature-cicd', url: 'https://github.com/Karthickramasamy007/cicd-demo.git'
-	      echo 'Git Checkout CompletedDDDDDDDDDDDDDDDDDDDDDDDDDD'
-	      sh 'ls'
-	      sh 'pwd'
-	   
-      }        
-    }
-  
-  
+
   agent {
     kubernetes { // Kubernetes plugin
       cloud 'kind_dev_cluster' // plugin cloud configuration name. Here is where jenkins controller and following containers are running.
