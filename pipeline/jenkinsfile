@@ -2,14 +2,6 @@ pipeline {
   
   
 
-  agent {
-    kubernetes { // Kubernetes plugin
-      cloud 'kind_dev_cluster' // plugin cloud configuration name. Here is where jenkins controller and following containers are running.
-      yamlFile 'builder.yaml'
-    }
-  }
-  
-
   stages {
   
     stage('Checkout Source') {
@@ -17,6 +9,14 @@ pipeline {
           git 'https://github.com/justmeandopensource/playjenkins.git'
         }
       }
+     
+   agent {
+      kubernetes { // Kubernetes plugin
+        cloud 'kind_dev_cluster' // plugin cloud configuration name. Here is where jenkins controller and following containers are running.
+        yamlFile 'builder.yaml'
+      }
+    }
+  
 
     stage('Kaniko Build & Push Image') {
       steps {
