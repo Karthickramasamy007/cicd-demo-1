@@ -11,6 +11,12 @@ pipeline {
   
 
   stages {
+  
+    stage('Checkout Source') {
+        steps {
+          git 'https://github.com/justmeandopensource/playjenkins.git'
+        }
+      }
 
     stage('Kaniko Build & Push Image') {
       steps {
