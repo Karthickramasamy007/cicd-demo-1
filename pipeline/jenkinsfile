@@ -11,7 +11,7 @@ pipeline {
 
   stages {
   
-    stage('Kaniko Build & Push Image') {
+    stage('Ubuntu stage ..') {
       steps {
         container('ubuntu') { //name mentioned in the yaml file.
           script {
