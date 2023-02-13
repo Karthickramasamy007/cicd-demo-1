@@ -4,11 +4,25 @@ pipeline {
       kubernetes { // Kubernetes plugin
         cloud 'kind_dev_cluster' // plugin cloud configuration name. Here is where jenkins controller and following containers are running.
         yamlFile 'pipeline/builder.yaml'
+        yamlFile 'pipeline/agent-linux.yaml'
       }
     }
   
 
   stages {
+  
+    stage('Kaniko Build & Push Image') {
+      steps {
+        container('ubuntu') { //name mentioned in the yaml file.
+          script {
+            echo "INTO THE UBUNTU....>>"
+            sh 'pwd'
+       
+          }
+        }
+      }
+    }
+  
   
     stage('Kaniko Build & Push Image') {
       steps {
