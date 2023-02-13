@@ -14,6 +14,7 @@ pipeline {
       steps {
         container('kaniko') { //name mentioned in the yaml file.
           script {
+            echo "Hello Kaniko"
             sh '''
             /kaniko/executor --dockerfile `pwd`/Dockerfile \
                              --context `pwd` \
